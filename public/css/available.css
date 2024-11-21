@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.avail-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #ffffff, #a69ff3);
+    padding: 20px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.pane{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 100px; /* 10px from the top edge of the page */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: 100%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    padding: 40px 30px 70px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: black solid 1px;;
+}
+.pane h1{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;  
+    justify-content: center; 
+    text-align: center;
+}
+.pane h1 img{
+    width: 50px;
+    margin-right: 10px; 
+    margin-left: 10px; 
+}
+.date {
+    flex:1;
+}
+.date label {
+    color: #002765;
+    margin-right: 10px; /* Adds space between the label and input */
+}
+#booking-date {
+    margin-top: 10px;
+    width: 300px;
+    height: 40px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+label{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 10px;
+    color: #002765;
+
+}
+.book-table {
+    justify-content: center;
+    display: flex;
+   text-align: center;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+.book-table th, .book-table td {
+    padding: 15px;
+    font-size: 18px;
+}
+
+.book-table th{
+    background-color: rgb(97, 67, 136);
+    color: white;
+    border: 1px solid #000000;
+    font-weight: 600;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.book-table td{
+    border: 1px solid rgb(0, 0, 0); 
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.slot {
+    display: inline-block; 
+    padding: 2.5px 5px;
+    margin: 5px; 
+    border: 2px solid; 
+    border-radius: 5px; 
+    font-size: 14px;
+    background-color: rgb(36, 214, 20);
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+.booked {
+    background-color: red;
+    color: white;
+    pointer-events: none;  /*deactivate for booked slots*/
+}
+.notbooked {
+    background-color: rgb(36, 214, 20);
+    color: rgb(0, 0, 0);
+}
+
+.selected {
+    background-color: rgb(71, 92, 71);
+    color: white;
+}
+
+
+.slot.booked {
+    background-color: red; /* Color for booked slots */
+    color: white;
+}
+
+.slot.notbooked {
+    background-color: rgb(36, 214, 20); /* Color for available slots */
+    color: rgb(0, 0, 0)e;
+}
