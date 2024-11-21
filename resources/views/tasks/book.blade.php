@@ -54,7 +54,7 @@
         <input type="text" id="hall-purpose" name="purpose" placeholder="Enter the Purpose" required>
         <!-- <input type="textarea" id="hall-purpose"> -->
        </div>
-      
+
        
        <br>      
 
@@ -192,7 +192,7 @@
          <!--7) Button for 3.30 - 4.00 -->
          <input type="checkbox" name="selected_slots[]" value="3.30 - 4.00" id="3.30 - 4.00" hidden>
         <button type="button" onclick="document.getElementById('3.30 - 4.00').checked = true;" 
-                class="{{ in_array('slot (3.30 - 4.000)', $bookedSlots) ? 'booked' : 'notbooked' }}" id="btns">
+                class="{{ in_array('3.30 - 4.00', $bookedSlots) ? 'booked' : 'notbooked' }}" id="btns">
                 
                 3.30 - 4.00
         </button>
@@ -218,10 +218,11 @@
         
 
         <!-- Book Now Button -->
+        @if(Auth::check())
         <div class="book-btn-container">
             <button type="submit" class="book">Book Now</button>
         </div>
-      
+        @endif
     </form>
        
   

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\IndexController;
 
 Route::get('/', function () {
@@ -27,6 +28,7 @@ Route::get('/front/index', [IndexController::class, 'index'])->name('front.index
 Route::get('/admin/admin', [LoginController::class, 'admin'])->name('admin.admin');
 Route::delete('/admin/user/{id}', [LoginController::class, 'destroy'])->name('admin.user.destroy');
 
+
 // Calculator page
 Route::get('/tasks/calc', [IndexController::class, 'calc'])->name('tasks.calc');
 
@@ -41,5 +43,12 @@ Route::get('/tasks/todo', [IndexController::class, 'todo'])->name('tasks.todo');
 
 Route::get('/tasks/book', [BookController::class, 'index'])->name('tasks.book');
 Route::post('/book-now', [BookController::class, 'bookNow'])->name('books.bookNow');
+
+Route::get('/tasks/avail', [BookController::class, 'available'])->name('tasks.available');
+Route::get('/tasks/table', [BookController::class, 'showavailable'])->name('tasks.table');
 //delete
 Route::delete('/books/delete/{id}', [BookController::class, 'delete'])->name('books.delete');
+
+//feedback-admin
+Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('admin.feedback');
+Route::post('tasks/feedback',[FeedbackController::class,'store'])->name('tasks.feedback');

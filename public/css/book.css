@@ -298,7 +298,8 @@ label{
         font-size: 16px;
     }
     .form-row {
-        flex-direction: column; /* Stack the elements on top of each other on smaller screens */
+        flex-direction: column;
+        /*  Stack the elements on top of each other on smaller screens  */
     }
 
 } 

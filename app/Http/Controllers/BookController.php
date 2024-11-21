@@ -27,6 +27,7 @@ class BookController extends Controller
         return view('tasks.book', compact('storedClasses'));
     }
     
+    
     public function bookNow(Request $request)
     {
         // Get the selected slots from the form
@@ -69,6 +70,39 @@ class BookController extends Controller
         // Redirect back with a success message
         return redirect()->back()->with('success', 'Booking deleted successfully!');
     }
+
+    public function available(){
+        return view('tasks.available');
+    } 
+
+
+
+public function showavailable(Request $request)
+{
+
+$selected_date = $request->input('selected_date');
+    
+$bookedSlotsByHall = ButtonClass::where('selected_date', $selected_date)
+        ->get()
+        ->groupBy('hall')
+        ->map(function ($group) {
+            return $group->pluck('class_name')->toArray();
+        })
+        ->toArray();
+
+
+// $bookedSlotsByHall = [
+//     'Main-Auditorium hall' => ['8.30 - 9.00', '9.30 - 10.00'],  
+//     'Vedhanayagam Hall' => ['10.00 - 10.30','1.30 - 2.00'],  
+//     'ECE seminar Hall' => ['1.00 - 1.30','2.00 - 2.30'],  
+//     'SF Seminar Hall' => ['3.30 - 4.00']  
+// ];
+
+
+
+return view('tasks.available', compact('selected_date', 'bookedSlotsByHall'));
+}
+
 }
     
  

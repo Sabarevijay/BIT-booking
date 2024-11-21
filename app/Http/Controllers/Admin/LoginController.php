@@ -63,5 +63,10 @@ public function admin()
         return redirect()->route('admin.admin')->with('success', 'User deleted successfully');
     }
     
+    public function feed()
+    {
+        $users = User::all();
+        return view('admin.auth.feedback',['users' => $users]);
+    }
 
 }

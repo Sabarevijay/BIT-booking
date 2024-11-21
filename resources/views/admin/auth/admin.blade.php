@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="{{ asset('css/user.css') }}">
 </head>
 <body>
+@extends('front.index')
     <div class="user-container">
-           <form method="GET" action="{{ route('front.index') }}" style="float: left;">
+           <!-- <form method="GET" action="{{ route('front.index') }}" style="float: left;">
                 @csrf
                 
                 <button  type="submit" class="back">Back</button>
-            </form>
+            </form> -->
    
         <h2>User Data</h2>
        
